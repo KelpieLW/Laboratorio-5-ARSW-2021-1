@@ -108,7 +108,7 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 	Nota: puede basarse en el formato jSON mostrado en el navegador al consultar una orden con el método GET.
 	
  - Consulta de todos los planos despues de a hacer post al plano del autor Pachito
- ![](img/despuesdepostman.png)
+ ![](img/despuesdepostman.PNG)
 
 3. Teniendo en cuenta el autor y numbre del plano registrado, verifique que el mismo se pueda obtener mediante una petición GET al recurso '/blueprints/{author}/{bpname}' correspondiente.
 
@@ -125,7 +125,3 @@ El componente BlueprintsRESTAPI funcionará en un entorno concurrente. Es decir,
 Ajuste el código para suprimir las condiciones de carrera. Tengan en cuenta que simplemente sincronizar el acceso a las operaciones de persistencia/consulta DEGRADARÁ SIGNIFICATIVAMENTE el desempeño de API, por lo cual se deben buscar estrategias alternativas.
 
 Escriba su análisis y la solución aplicada en el archivo ANALISIS_CONCURRENCIA.txt
-
-.
-
-
