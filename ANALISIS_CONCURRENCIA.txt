@@ -1,0 +1,14 @@
+Qué condiciones de carrera se podrían presentar?
+
+    - Las condiciones presentes en el codigo se ven al hacer cualquier acción como consulta, modificación del diccionario en el que se almacena todos los planos.
+    Ejemplo: Una operacion GET ocurre casi simultaneamente con una operacion put y se da una condicion de carrera ya que el resultado de dicha operación dependeria de que metodo se ejecute primero.
+
+Cuales son las respectivas regiones críticas?
+Los POST,GET y PUT todas estas operaciones efectuan cambios y consultas en el diccionario donde son almacenados todos los planos,
+cuando se ejecutan estas operaciones al mismo tiempo se tienen muchas peticiones lo cual hace que nos pueda dar datos erroneos,
+
+Escriba su análisis y la solución aplicada en el archivo ANALISIS_CONCURRENCIA.txt
+
+
+En la clase InMemoryBlueprintPersistence modificamos la estructura de datos del HASHMAP por ConcurrentHashMap,
+la cual hace que el acceso a este diccionario sea tratado de manera atomica y evite asi cualquier condición de carrera.

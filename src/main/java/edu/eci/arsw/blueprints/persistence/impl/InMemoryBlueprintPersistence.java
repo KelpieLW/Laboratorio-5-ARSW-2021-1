@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Null;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  *
@@ -26,9 +27,10 @@ import java.util.*;
 
 public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
 
-    private final Map<Tuple<String,String>,Blueprint> blueprints=new HashMap<>();
+    private final ConcurrentHashMap<Tuple<String,String>,Blueprint> blueprints=new ConcurrentHashMap<>();
 
     public InMemoryBlueprintPersistence() {
+
         //load stub data
         Point[] pts=new Point[]{new Point(140, 140),new Point(115, 115)};
         Blueprint bp=new Blueprint("Pedro_el_Escamoso", "Coral_Bueno",pts);
